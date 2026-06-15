@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FryCuisine — Real Food, Real Stories</title>
+<meta name="description" content="FryCuisine is a modern food blog covering recipes, street food, and kitchen stories — breakfast to dessert, sourdough to street carts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Fry<em>Cuisine</em></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#latest">Recipes</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#newsletter">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#latest">Recipes</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#newsletter">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HERO SLIDER ============ -->
+<section class="hero" id="hero">
+  <div class="hero-slider" id="hero-slider">
+
+    <!-- Slide 1 — left text, large dish -->
+    <div class="slide is-active" data-layout="left" data-image="dark">
+      <div class="slide-media">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2000&auto=format&fit=crop" alt="Overhead view of a rustic roasted vegetable platter">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <div class="slide-text">
+          <span class="eyebrow eyebrow-line">Issue No. 47 — Slow Sundays</span>
+          <h1 class="slide-title">Roasted, charred<br>&amp; deeply good.</h1>
+          <p class="slide-desc">A weekend's worth of one-pan roasts, smoky vegetables, and the dressings that tie it all together.</p>
+          <div class="slide-actions">
+            <a href="#latest" class="btn btn-primary">Read the Story</a>
+            <a href="#categories" class="btn btn-ghost">Browse Recipes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 — centered text, category highlight -->
+    <div class="slide" data-layout="center" data-image="light">
+      <div class="slide-media">
+        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=2000&auto=format&fit=crop" alt="Fresh pasta being made on a wooden board">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <div class="slide-text">
+          <span class="eyebrow eyebrow-line">New Series</span>
+          <h1 class="slide-title">Pasta, by hand —<br>a 7-part series.</h1>
+          <p class="slide-desc">From flour and eggs to your first sheet of tagliatelle. No machine required.</p>
+          <div class="slide-actions">
+            <a href="#latest" class="btn btn-primary">Start the Series</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 — right text, split panel feel -->
+    <div class="slide" data-layout="right" data-image="dark">
+      <div class="slide-media">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2000&auto=format&fit=crop" alt="Street food vendor grilling skewers at night market">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <div class="slide-text">
+          <span class="eyebrow eyebrow-line">Field Notes</span>
+          <h1 class="slide-title">After dark:<br>street food guide.</h1>
+          <p class="slide-desc">Twelve stalls, six cities, and the dishes worth staying up for.</p>
+          <div class="slide-actions">
+            <a href="#latest" class="btn btn-primary">Explore the Guide</a>
+            <a href="#about" class="btn btn-ghost">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Slider controls -->
+  <div class="slider-controls container">
+    <button class="slider-arrow prev" id="slider-prev" aria-label="Previous slide">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="slider-dots" id="slider-dots"></div>
+    <button class="slider-arrow next" id="slider-next" aria-label="Next slide">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="hero-scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============ LATEST FROM FRYCUISINE — MASONRY ============ -->
+<section class="section latest" id="latest">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">The Feed</span>
+        <h2 class="section-title">Latest from FryCuisine</h2>
+      </div>
+      <p class="section-lede">Fresh stories from the test kitchen, the road, and everywhere in between — updated weekly.</p>
+    </div>
+
+    <div class="masonry" id="masonry-grid">
+
+      <!-- Card 1 - large, spans 2 cols -->
+      <article class="m-card m-large reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1600&auto=format&fit=crop" alt="Bowl of fresh ramen with soft egg and greens">
+            <span class="m-tag">Dinner</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 12, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Lena Ortiz</span>
+            </div>
+            <h3 class="m-title">The 45-minute ramen that actually tastes like a 12-hour broth</h3>
+            <p class="m-excerpt">A pressure-cooker shortcut, a cheat-code tare, and the toppings that make it feel like a Tokyo back-alley counter.</p>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 2 - tall -->
+      <article class="m-card m-tall reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1200&auto=format&fit=crop" alt="Stack of pancakes with berries and syrup">
+            <span class="m-tag">Breakfast</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 10, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Marco Reyes</span>
+            </div>
+            <h3 class="m-title">Brown butter pancakes, finally without the soggy middle</h3>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3 - medium -->
+      <article class="m-card reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop" alt="Slice of chocolate layer cake on a plate">
+            <span class="m-tag m-tag-alt">Desserts</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 8, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Priya Nair</span>
+            </div>
+            <h3 class="m-title">A dark chocolate cake that stays moist for three days</h3>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4 - medium -->
+      <article class="m-card reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop" alt="Fresh green salad with herbs and citrus">
+            <span class="m-tag m-tag-green">Healthy</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 6, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Sofia Kahn</span>
+            </div>
+            <h3 class="m-title">Five dressings that make any salad worth eating</h3>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 5 - tall, street food -->
+      <article class="m-card m-tall reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1200&auto=format&fit=crop" alt="Grilled meat skewers at a street food stall">
+            <span class="m-tag m-tag-warm">Street Food</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 3, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">David Cho</span>
+            </div>
+            <h3 class="m-title">Smoke, char, and a 9pm queue: inside Bangkok's best skewer cart</h3>
+            <p class="m-excerpt">What makes the marinade work, and how to get close to it in a home oven.</p>
+            <span class="m-readmore">Read the story <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 6 - large -->
+      <article class="m-card m-large reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=1600&auto=format&fit=crop" alt="Sourdough bread loaf cut open showing crumb">
+            <span class="m-tag">Baking</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">June 1, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Lena Ortiz</span>
+            </div>
+            <h3 class="m-title">Sourdough for people with a day job: the slow-fridge method</h3>
+            <p class="m-excerpt">Mix at night, shape in the morning, bake when you're home — no babysitting required.</p>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 7 - medium -->
+      <article class="m-card reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?q=80&w=1200&auto=format&fit=crop" alt="Bowl of soup with bread on the side">
+            <span class="m-tag">Lunch</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">May 29, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Marco Reyes</span>
+            </div>
+            <h3 class="m-title">One-pot tomato soup that tastes like it simmered all day</h3>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 8 - medium -->
+      <article class="m-card reveal">
+        <a href="#" class="m-card-link">
+          <div class="m-img">
+            <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?q=80&w=1200&auto=format&fit=crop" alt="Glasses of iced coffee on a table">
+            <span class="m-tag m-tag-alt">Drinks</span>
+          </div>
+          <div class="m-body">
+            <div class="m-meta">
+              <span class="m-date">May 27, 2026</span>
+              <span class="m-dot">•</span>
+              <span class="m-author">Priya Nair</span>
+            </div>
+            <h3 class="m-title">The cold brew ratio I won't stop recommending</h3>
+            <span class="m-readmore">Read the recipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+    <div class="latest-footer reveal">
+      <a href="#" class="btn btn-outline">View All Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section categories" id="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Browse by Craving</span>
+        <h2 class="section-title">Categories</h2>
+      </div>
+      <p class="section-lede">Pick a shelf in the pantry — every category is a doorway into a different kind of cooking.</p>
+    </div>
+
+    <div class="cat-grid">
+      <a href="#" class="cat-card reveal" style="--i:0">
+        <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?q=80&w=900&auto=format&fit=crop" alt="Recipes category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">126 recipes</span>
+          <span class="cat-name">Recipes</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:1">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=900&auto=format&fit=crop" alt="Breakfast category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">42 recipes</span>
+          <span class="cat-name">Breakfast</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:2">
+        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=900&auto=format&fit=crop" alt="Lunch category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">58 recipes</span>
+          <span class="cat-name">Lunch</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:3">
+        <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?q=80&w=900&auto=format&fit=crop" alt="Dinner category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">81 recipes</span>
+          <span class="cat-name">Dinner</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:4">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=900&auto=format&fit=crop" alt="Desserts category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">64 recipes</span>
+          <span class="cat-name">Desserts</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:5">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=900&auto=format&fit=crop" alt="Healthy food category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">37 recipes</span>
+          <span class="cat-name">Healthy Food</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal" style="--i:6">
+        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=900&auto=format&fit=crop" alt="Street food category">
+        <div class="cat-overlay"></div>
+        <div class="cat-label">
+          <span class="cat-count">29 recipes</span>
+          <span class="cat-name">Street Food</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED RECIPES ============ -->
+<section class="section featured">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Test Kitchen Picks</span>
+        <h2 class="section-title">Featured Recipes</h2>
+      </div>
+      <p class="section-lede">The dishes our readers cook on repeat — tried, tested, and rated by the FryCuisine team.</p>
+    </div>
+
+    <div class="recipe-grid">
+
+      <article class="recipe-card reveal">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=900&auto=format&fit=crop" alt="Margherita pizza fresh from the oven">
+          <span class="recipe-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg> 4.9</span>
+        </div>
+        <div class="recipe-body">
+          <h3 class="recipe-title">Wood-fired style Margherita at home</h3>
+          <div class="recipe-meta">
+            <span class="recipe-meta-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 35 min</span>
+            <span class="recipe-meta-item recipe-diff recipe-diff-easy">Easy</span>
+          </div>
+          <a href="#" class="recipe-btn">View Recipe</a>
+        </div>
+      </article>
+
+      <article class="recipe-card reveal">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=900&auto=format&fit=crop" alt="Korean fried chicken with sauce">
+          <span class="recipe-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg> 4.8</span>
+        </div>
+        <div class="recipe-body">
+          <h3 class="recipe-title">Double-fried gochujang chicken</h3>
+          <div class="recipe-meta">
+            <span class="recipe-meta-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 1 hr 10 min</span>
+            <span class="recipe-meta-item recipe-diff recipe-diff-med">Medium</span>
+          </div>
+          <a href="#" class="recipe-btn">View Recipe</a>
+        </div>
+      </article>
+
+      <article class="recipe-card reveal">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=900&auto=format&fit=crop" alt="Beef ramen bowl with toppings">
+          <span class="recipe-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg> 5.0</span>
+        </div>
+        <div class="recipe-body">
+          <h3 class="recipe-title">45-minute shortcut tonkotsu ramen</h3>
+          <div class="recipe-meta">
+            <span class="recipe-meta-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 45 min</span>
+            <span class="recipe-meta-item recipe-diff recipe-diff-med">Medium</span>
+          </div>
+          <a href="#" class="recipe-btn">View Recipe</a>
+        </div>
+      </article>
+
+      <article class="recipe-card reveal">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=900&auto=format&fit=crop" alt="Sourdough loaf on a wooden board">
+          <span class="recipe-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg> 4.7</span>
+        </div>
+        <div class="recipe-body">
+          <h3 class="recipe-title">Slow-fridge sourdough for beginners</h3>
+          <div class="recipe-meta">
+            <span class="recipe-meta-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 18 hr (mostly resting)</span>
+            <span class="recipe-meta-item recipe-diff recipe-diff-hard">Advanced</span>
+          </div>
+          <a href="#" class="recipe-btn">View Recipe</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="container about-inner">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1200&auto=format&fit=crop" alt="Chef plating food in a kitchen">
+      <div class="about-tag">
+        <span class="about-tag-num">07</span>
+        <span class="about-tag-text">years of recipe testing</span>
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="section-title">Cooking is a language — we're here to help you speak it.</h2>
+      <p class="about-text">FryCuisine started in a one-burner apartment kitchen with a single question: why do recipes online never work the way they're written? Seven years and a few thousand test batches later, we're a small team of cooks, writers, and photographers obsessed with getting the details right — the ones that actually matter.</p>
+      <p class="about-text">We test every recipe at least three times, in real home kitchens, with ingredients you can actually buy. No gimmicks, no filler — just food worth making again.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-num">480+</span>
+          <span class="stat-label">Tested Recipes</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">2.1M</span>
+          <span class="stat-label">Monthly Readers</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">19</span>
+          <span class="stat-label">Cities Visited</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary">More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="newsletter">
+  <div class="container newsletter-inner reveal">
+    <div class="newsletter-text">
+      <span class="eyebrow eyebrow-on-dark">Don't Miss a Recipe</span>
+      <h2 class="newsletter-title">Get one good recipe in your inbox, every Friday.</h2>
+      <p class="newsletter-desc">No spam, no daily noise — just a single, well-tested recipe and the story behind it.</p>
+    </div>
+    <form class="newsletter-form" id="newsletter-form">
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-brand">
+      <span class="logo-mark footer-logo">Fry<em>Cuisine</em></span>
+      <p class="footer-about">A modern food blog for people who like to know why a recipe works, not just how. Recipes, street food guides, and kitchen stories — published weekly.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21l4-13M12 8a4 4 0 1 1 0 8h-1.5"/><circle cx="12" cy="12" r="10"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Categories</h4>
+      <ul class="footer-list">
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Breakfast</a></li>
+        <li><a href="#">Lunch</a></li>
+        <li><a href="#">Dinner</a></li>
+        <li><a href="#">Desserts</a></li>
+        <li><a href="#">Healthy Food</a></li>
+        <li><a href="#">Street Food</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Latest Posts</h4>
+      <ul class="footer-posts">
+        <li>
+          <a href="#" class="footer-post">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop" alt="">
+            <span>
+              <span class="footer-post-title">The 45-minute ramen shortcut</span>
+              <span class="footer-post-date">June 12, 2026</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="footer-post">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=200&auto=format&fit=crop" alt="">
+            <span>
+              <span class="footer-post-title">Brown butter pancakes, fixed</span>
+              <span class="footer-post-date">June 10, 2026</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="footer-post">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=200&auto=format&fit=crop" alt="">
+            <span>
+              <span class="footer-post-title">A dark chocolate cake, day three</span>
+              <span class="footer-post-date">June 8, 2026</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Contact</h4>
+      <ul class="footer-contact">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="M3 7l9 6 9-6"/></svg>
+          hello@frycuisine.com
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.34 1.9.62 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.28 1.85.49 2.81.62A2 2 0 0 1 22 16.92z"/></svg>
+          +91 12345-12345
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Colaba,Mumbai,Maharashtra
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2026 FryCuisine. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
